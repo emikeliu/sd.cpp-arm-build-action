@@ -11,7 +11,7 @@ jobs:
       - name: Setup Repositories
         run: sudo mv crosscomp-sources.lst /etc/apt/sources.list;
       - name: Check apt sources
-        run: cat /etc/apt/sources.list
+        run: cat /etc/apt/sources.list && rm /etc/apt/apt-mirrors.txt
       - name: Add arm64 as architecture
         run: sudo dpkg --add-architecture arm64
       - name: Update APT
