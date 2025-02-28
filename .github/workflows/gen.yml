@@ -24,7 +24,7 @@ jobs:
       - name: Clone
         uses: GuillaumeFalourd/clone-github-repo-action@v2.1
         with:
-          depth: 1
+          depth: 2
           owner: 'leejet'
           repository: 'stable-diffusion.cpp'
       - name: Build
