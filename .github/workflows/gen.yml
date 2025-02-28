@@ -32,7 +32,7 @@ jobs:
           export CMAKE_TOOLCHAIN_FILE=`pwd`/aarch64-toolchain.cmake
           mkdir stable-diffusion.cpp/build
           cd stable-diffusion.cpp/build
-          cmake .. -DCMAKE_TOOLCHAIN_FILE=`pwd`/aarch64-toolchain.cmake -DSD_VULKAN=ON
+          cmake .. -DCMAKE_TOOLCHAIN_FILE=../../aarch64-toolchain.cmake -DSD_VULKAN=ON
           cmake --build . --config Release
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
