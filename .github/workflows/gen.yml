@@ -25,14 +25,13 @@ jobs:
         uses: GuillaumeFalourd/clone-github-repo-action@v2.1
         with:
           depth: 1
-          branch: 'master'
           owner: 'leejet'
           repository: 'stable-diffusion.cpp'
       - name: Build
         run: |
           export CMAKE_TOOLCHAIN_FILE=`pwd`/aarch64-toolchain.cmake
-          mkdir stable-diffuison.cpp/build
-          cd stable-diffuison.cpp/build
+          mkdir stable-diffusion.cpp/build
+          cd stable-diffusion.cpp/build
           cmake .. -DCMAKE_TOOLCHAIN_FILE=`pwd`/aarch64-toolchain.cmake -DSD_VULKAN=ON
           cmake --build . --config Release
       - name: Upload Artifacts
