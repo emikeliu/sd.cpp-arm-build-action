@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - name: Setup Repositories
-        run: sudo mv crosscomp-sources.lst /etc/apt/sources.list;
       - name: Check apt sources
         run: cat /etc/apt/sources.list
       - name: Add arm64 as architecture
