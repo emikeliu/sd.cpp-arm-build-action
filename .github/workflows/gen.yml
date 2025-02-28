@@ -21,8 +21,13 @@ jobs:
       - name: Install Target Dependencies
         run: | 
           sudo apt install libvulkan-dev:arm64 glslc:arm64 -y --no-install-recommends
-      - name: Download
-        run: git clone https://github.com/leejet/stable-diffusion.cpp
+      - name: Clone
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.1
+        with:
+          depth: 1
+          branch: 'master'
+          owner: 'leejet'
+          repository: 'stable-diffusion.cpp'
       - name: Build
         run: |
           export CMAKE_TOOLCHAIN_FILE=`pwd`/aarch64-toolchain.cmake
