@@ -13,7 +13,7 @@ jobs:
       - name: Add arm64 as architecture
         run: sudo dpkg --add-architecture arm64
       - name: Update APT
-        run:  sudo apt update
+        run:  sudo apt update && exit 0;
       - name: Install Host Dependencies
         run: sudo apt install cmake:amd64 ninja-build:amd64 gcc-12-aarch64-linux-gnu:amd64 g++-12-aarch64-linux-gnu:amd64 bison:amd64 python3-distutils:amd64 ocaml-core:amd64 xz-utils:amd64 pkg-config:amd64
       - name: Install Target Dependencies
