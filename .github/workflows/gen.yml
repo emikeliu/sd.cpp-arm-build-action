@@ -4,7 +4,7 @@ on: [workflow_dispatch, pull_request]
 jobs:
   build-linux-arm:
     name: Build sd.cpp for Linux arm64
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -20,7 +20,7 @@ jobs:
         run: sudo apt install cmake:amd64 ninja-build:amd64 gcc-12-aarch64-linux-gnu:amd64 g++-12-aarch64-linux-gnu:amd64 bison:amd64 python3-distutils:amd64 ocaml-core:amd64 xz-utils:amd64 pkg-config:amd64
       - name: Install Target Dependencies
         run: | 
-          sudo apt install libvulkan-dev:arm64 shaderc -y --no-install-recommends
+          sudo apt install libvulkan-dev:arm64 shaderc:arm64 -y --no-install-recommends
       - name: Download
         run: git clone https://github.com/leejet/stable-diffusion.cpp
       - name: Build
