@@ -22,11 +22,10 @@ jobs:
         run: | 
           sudo apt install libvulkan-dev:arm64 glslc:arm64 -y --no-install-recommends
       - name: Clone
-        uses: GuillaumeFalourd/clone-github-repo-action@v3.1
+        uses: actions/checkout@v4
         with:
-          depth: 3
-          owner: 'leejet'
-          repository: 'stable-diffusion.cpp'
+          repository: 'leejet/stable-diffusion.cpp'
+          submodules: true
       - name: Build
         run: |
           export CMAKE_TOOLCHAIN_FILE=`pwd`/aarch64-toolchain.cmake
