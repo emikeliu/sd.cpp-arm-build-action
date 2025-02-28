@@ -17,7 +17,7 @@ jobs:
       - name: Update APT
         run:  sudo apt update && exit 0;
       - name: Install Host Dependencies
-        run: sudo apt install cmake:amd64 ninja-build:amd64 gcc-12-aarch64-linux-gnu:amd64 g++-12-aarch64-linux-gnu:amd64 bison:amd64 ocaml-core:amd64 xz-utils:amd64 pkg-config:amd64
+        run: sudo apt install cmake:amd64 ninja-build:amd64 gcc-12-aarch64-linux-gnu:amd64 g++-12-aarch64-linux-gnu:amd64 bison:amd64 ocaml-core:amd64 xz-utils:amd64 pkg-config:amd64 qemu-user-static
       - name: Install Target Dependencies
         run: | 
           sudo apt install libvulkan-dev:arm64 glslc:arm64 -y --no-install-recommends
