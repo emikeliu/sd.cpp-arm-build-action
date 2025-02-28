@@ -9,9 +9,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Setup Repositories
-        run: sudo mv crosscomp-sources.lst /etc/apt/sources.list;
+        run: sudo mv crosscomp-sources.lst /etc/apt/sources.list.d/ubuntu.sources;
       - name: Check apt sources
-        run: cat /etc/apt/sources.list && sudo rm /etc/apt/apt-mirrors.txt
+        run: cat /etc/apt/sources.list.d/ubuntu.sources
       - name: Add arm64 as architecture
         run: sudo dpkg --add-architecture arm64
       - name: Update APT
