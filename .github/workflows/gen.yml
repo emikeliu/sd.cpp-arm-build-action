@@ -24,7 +24,7 @@ jobs:
       - name: Clone
         uses: actions/checkout@v4
         with:
-          repository: 'leejet/stable-diffusion.cpp'
+          repository: 'emikeliu/sd.cpp-arm'
           path: 'stable-diffusion.cpp/'
           submodules: true
       - name: Build
